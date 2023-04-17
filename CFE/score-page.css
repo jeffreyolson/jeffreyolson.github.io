@@ -1,0 +1,66 @@
+/**********************************************************/
+/*                     score-page.css                     */
+/*                                                        */
+/* Style settings for a score page in a subject thread,   */
+/* e.g. for an exercise page like ex/no123.html           */
+/*                                                        */
+/* Such pages consist of                                  */
+/*   o  "bar" a navigation bar containing                 */
+/*      "chap" a chapter/thread title and                 */
+/*      "prev" and "next" links to next thread elements.  */
+/*   o  "this" the title of the melody, visible on hover  */
+/*   o  an <img> link to the svg score                    */
+/*                                                        */
+/**********************************************************/
+body {
+   background-color: #fffdf0;
+   font-family: Helvetica, sans-serif; /* for chap, next, prev */
+   font-size: 1.8vw;  /* so text scales according to window width */
+}
+
+.bar {
+   display: grid;
+   grid-template-columns: auto auto auto;
+   background-color: #448;  /* dark blue for CFE book */
+   color: #fffdf0;
+   height: 3vw;  /* so bar scales according to window width */
+   line-height: 3vw;  /* to keep text centered vertically in bar */
+}
+
+.prev {
+   text-align: left;
+}
+
+.chap {
+   text-align: center;
+}
+
+.next {
+   text-align: right;
+}
+
+.this {
+   text-align: center;
+   text-decoration: none;
+   color: transparent;
+   position: relative;
+   top: 0.6em;          /* lower relative to bar */
+   font-size: 2.0vw;    /* enlarged slightly vs bar */
+}
+
+.bar a {
+   text-decoration: none;
+   color: #fffdf0;
+}
+
+.bar a:hover {
+   color: #6cf;
+}
+
+.this a:hover {
+   color: #000;  /* show only on mouseover */
+}
+
+img {
+   width: 100%;  /* so user can scale via window width */
+}
