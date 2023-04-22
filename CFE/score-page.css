@@ -59,7 +59,7 @@ body {
 
 .this a:hover {
    color: #000;  /* show only on mouseover */
-   cursor: help;
+   cursor: pointer;
 }
 
 img {
