@@ -1,0 +1,170 @@
+/**********************************************************/
+/*                     index-page.css                     */
+/*                                                        */
+/* Style settings for Exercise Index and Name Index       */
+/*                                                        */
+/* Such pages consist of      TODO                        */
+/*   o  "bar" a navigation bar containing                 */
+/*      "chap" a chapter/thread title and                 */
+/*      "prev" and "next" links to next thread elements.  */
+/*   o  "this" the title of the melody, visible on hover  */
+/*   o  an <img> link to the svg score                    */
+/*                                                        */
+/**********************************************************/
+body {
+   background-color: #fffdf0;
+   font-family: Helvetica, sans-serif; /* for chap, next, prev */
+   font-size: 1.8vw;  /* so text scales according to window width */
+}
+
+.bar {
+   display: grid;
+   grid-template-columns: auto auto auto;
+   background-color: #448;  /* dark blue for CFE book */
+   color: #fffdf0;
+   height: 3vw;  /* so bar scales according to window width */
+   line-height: 3vw;  /* to keep text centered vertically in bar */
+}
+
+.prev {
+   text-align: left;
+}
+
+.chap {
+   text-align: center;
+}
+
+.next {
+   text-align: right;
+}
+
+.this {
+   text-align: center;
+   text-decoration: none;
+   color: transparent;
+   position: relative;
+   top: 0.6em;          /* lower relative to bar */
+   font-size: 2.0vw;    /* enlarged slightly vs bar */
+}
+
+.bar a {
+   text-decoration: none;
+   color: #fffdf0;
+}
+
+.bar a:hover {
+   color: #6cf;
+}
+
+.this a:hover {
+   color: #000;  /* show only on mouseover */
+   cursor: help;
+}
+
+img {
+   width: 100%;  /* so user can scale via window width */
+}
+
+.cells {
+   display: grid;
+   width: 100%;
+   grid-template-columns: auto auto auto auto auto auto auto auto auto auto
+                          auto auto auto auto auto auto auto auto auto auto
+                          auto auto auto auto auto;
+   grid-gap: 1px;
+   color: #fffdf0;
+}
+
+.ex {
+   background-color: #448;
+   width: 100%;
+   height: 4vw;
+   line-height: 4vw;
+   font-size: 4vw;  /* so text scales according to window width */
+   text-align: center;
+}
+
+.ex a {
+   text-decoration: none;
+}
+
+.ex a:link {
+   color: #448;
+}
+
+.ex a:visited {
+   color: #fe4;
+}
+
+.ex a:hover {
+   color: #6cf;
+}
+
+.ex a:active {
+   color: #f00;
+}
+
+.container {
+   margin: auto;
+   width: 75%;
+}
+
+.container a {
+   text-decoration: none;
+}
+
+.letters {
+   text-align: center;
+   color: #00e;
+}
+
+.igrp {
+   text-align: center;
+   height: 6vw;  /* so bar scales according to window width */
+   line-height: 6vw;  /* to keep text centered vertically in bar */
+   font-size: 2.5vw;  /* so text scales according to window width */
+}
+
+.iltr {
+   text-align: center;
+   height: 6vw;  /* so bar scales according to window width */
+   line-height: 6vw;  /* to keep text centered vertically in bar */
+   font-size: 2.5vw;  /* so text scales according to window width */
+}
+
+.ix {
+   display: grid;
+   grid-template-columns: 20% 80%
+}
+
+.id {
+   text-align: left;
+}
+
+.it {
+   text-align: left;
+}
+
+.letters a {
+   color: #06c;
+}
+
+.letters a:active {
+   color: #f00;
+}
+
+.igrp a {
+   color: #06c;
+}
+
+.igrp a:active {
+   color: #f00;
+}
+
+.iltr a {
+   color: #06c;
+}
+
+.iltr a:active {
+   color: #f00;
+}
