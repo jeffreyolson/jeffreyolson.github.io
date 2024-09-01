@@ -75,28 +75,42 @@ body {
    margin-top: 1em;
 }
 
-.lnks {
+.main {
    display: grid;
-   grid-template-columns: auto auto auto auto;
+   grid-template-columns: 30% auto;
    font-size: 1.4em;
+   column-gap: 3.0em;
    margin-top: 1.2em;
    margin-bottom: 1.2em;
+   margin-left: 1.1em;
 }
 
-.frst {
+.lnks {
+   display: grid;
+   grid-template-rows: auto auto auto;
+   font-size: 1.0em;
+   row-gap: 1.0em;
+   margin-right: 3.0em;
+}
+
+.bout {
    text-align: left;
 }
 
+.bout img {
+   width: 100%;
+}
+
 .ltst {
-   text-align: center;
+   text-align: left;
 }
 
 .cmpl {
-   text-align: center;
+   text-align: left;
 }
 
 .musx {
-   text-align: right;
+   text-align: left;
 }
 
 .mitm {
