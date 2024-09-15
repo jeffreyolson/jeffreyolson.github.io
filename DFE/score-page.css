@@ -1,0 +1,118 @@
+/* ©2024 J. J. Olson, licensed as CC-BY */
+/**********************************************************/
+/*                     score-page.css                     */
+/*                                                        */
+/* Style settings for a full-width exercise score page.   */
+/* Whole page magnifies as browser window is widened.     */
+/* instead of using browser's font size to magnify.       */
+/* Bar scrolls away to see more music on mobile devs.     */
+/* e.g. for a page like ex/no123.html                     */
+/*                                                        */
+/* Such pages consist of                                  */
+/*   "bar" a navigation bar containing                    */
+/*      "prev" linking to previous item in sequence       */
+/*      "icon" linking back to the main page              */
+/*      "chap" the chapter/thread title                   */
+/*      "indx" ABC... linking to the name index           */
+/*      "next" linking to next item in sequence           */
+/*   "this" the melody title visible only upon hover      */
+/*   "scor" an <img> link to the svg music score          */
+/*                                                        */
+/**********************************************************/
+
+
+/**********************************************************/
+/*        global color scheme                             */
+body {
+   --bararea: #555;   /* DFE dark gray-black bar */
+   --bartext: #fff;   /* DFE white bar text */
+   --barhovr: #6cf;   /* DFE lt blue bar hover */
+   --pagewhit: #fff;
+   --linkblck: #000;
+   --linkactv: #f00;
+   background-color: var(--pagewhit);
+   font-family: Helvetica, sans-serif;
+   font-size: 1.8vw;  /* so contents scale according to window width */
+}
+
+/**********************************************************/
+/*        for non-fixed (scroll-away) navigation bar      */
+
+.bar {
+   display: grid;
+   grid-template-columns: auto auto auto auto auto;
+   background-color: var(--bararea);
+   color: var(--bartext);
+   height: 1.6em;
+   line-height: 1.6em;
+}
+
+.bar a {
+   color: var(--bartext);
+   text-decoration: none;
+}
+
+.bar a:hover {
+   color: var(--barhovr);
+}
+
+.bar a:active {
+   color: var(--linkactv);
+}
+
+.prev {
+   text-align: left;
+}
+
+.icon {
+   height: 1.6em;
+}
+
+a:hover .icon {
+   background-color: var(--barhovr);
+}
+
+a:active .icon {
+   background-color: var(--linkactv);
+}
+
+.chap {
+   text-align: center;
+}
+
+.indx {
+   text-align: right;
+}
+
+.next {
+   text-align: right;
+}
+
+/**********************************************************/
+/*        for hidden identification of this melody        */
+
+.this {
+   text-align: center;
+   text-decoration: none;
+   color: transparent;      /* normally invisible */
+   position: relative;
+   top: 0.85em;
+   font-size: 1.15em;
+   background-image: url("fg/title.png"); /* gray TITLE on clear bkgd */
+   background-position: center;
+   background-size: contain;
+   background-repeat: no-repeat;
+}
+
+.this a:hover {
+   background-color: var(--pagewhit);  /* hide title.png */
+   color: var(--linkblck);  /* show only on mouseover */
+   cursor: pointer;
+}
+
+/**********************************************************/
+/*        for full width image of svg music score         */
+
+.scor {
+   width: 100%;
+}

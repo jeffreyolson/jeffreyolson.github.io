@@ -1,0 +1,453 @@
+/* ©2024 J. J. Olson, licensed as CC-BY */
+/**********************************************************/
+/*                      text-page.css                     */
+/*                                                        */
+/* Style settings for a typical text and diagram page.    */
+/* i.e. for all pages except the individual exercises.    */
+/* e.g. how-to-use.html  ex/grpB.html  ex/index-nms.html  */
+/*                                                        */
+/* All of these pages use a sheet-of-paper model where    */
+/* the sheet stops expanding after reaching a reasonable  */
+/* size that depends on the browser's font size.          */
+/*                                                        */
+/* Typically these pages (except index.html) include a    */
+/* navigation bar that remains fixed at the top of the    */
+/* the sheet despite scrolling.                           */
+/*                                                        */
+/* The group pages include a special "star map" that      */
+/* rewards a star for each exercise that is visited.      */
+/*                                                        */
+/* The exercise and name indexes are lists of entries     */
+/* divided into sections either by group or by alphabet.  */
+/*                                                        */
+/* Bibliography entries support the references page.      */
+/*                                                        */
+/**********************************************************/
+
+
+/**********************************************************/
+/*        global color scheme                             */
+body {
+   --bararea: #448;   /* CFE dark blue bar */
+   --bartext: #fff;   /* CFE white bar text */
+   --barhovr: #6cf;   /* CFE lt blue bar hover */
+   --starvstd: #fe4;  /* CFE gold star */
+   --paprwhit: #fff;
+   --paprdesk: #eee;
+   --paprshdw: #ddd;
+   --indxltrs: #00f;
+   --linkblck: #000;
+   --linkhovr: #00e;
+   --linkblue: #06c;
+   --linkvstd: #808;
+   --linkactv: #f00;
+   background-color: var(--paprdesk);
+   font-family: Century SchoolBook, Times New Roman, Times, serif;
+   margin: 0.5em;
+}
+
+
+/**********************************************************/
+/*        for general tags                                */
+
+a {
+   text-decoration: none;
+   color: var(--linkblue);
+}
+
+a:visited {
+   color: var(--linkblue);
+}
+
+a:hover {
+   color: var(--linkhovr);
+}
+
+a:active {
+   color: var(--linkactv);
+}
+
+h1 {
+   text-align: center;
+   font-size: 1.6em;
+   font-weight: bold;
+}
+
+h2 {
+   text-align: left;
+   font-size: 1.1em;
+   font-weight: bold;
+}
+
+p.norm {
+   text-indent: 3ch;
+}
+
+/**********************************************************/
+/*        for postscript png and lilypond svg figures     */
+
+.png, .svg {
+   width: 100%;
+}
+
+/**********************************************************/
+/*        for limited width paper                         */
+
+.papr {
+   box-sizing: border-box;
+   background-color: var(--paprwhit);
+   max-width: 50em;
+   font-size: calc(min(1em, 1.95vw));
+   margin: auto;
+   padding: 0em 3em 2em;
+   border-width: 0.2em 0.3em 0.4em;
+   border-style: solid;
+   border-color: var(--paprshdw);
+}
+
+/**********************************************************/
+/*        for fixed navigation bar at top                 */
+
+.barfixer {
+   box-sizing: border-box;
+   position: fixed;
+   left: 0;
+   top: 0;
+   width: 100%;
+   font-size: calc(min(1em, 1.95vw));
+   background-color: var(--paprdesk);
+   padding: 0.3em 0.6em 0em;
+}
+
+.bar {
+   box-sizing: border-box;
+   max-width: 50em;
+   margin: auto;
+   border-width: 0.2em 0.3em 0em;
+   border-style: solid;
+   border-color: var(--paprshdw);
+   display: grid;
+   grid-template-columns: auto auto auto auto auto;
+   background-color: var(--bararea);
+   font-family: Helvetica, Arial, sans-serif;
+   color: var(--bartext);
+   height: 1.6em;
+   line-height: 1.4em;
+}
+
+.bar a {
+   color: var(--bartext);
+   text-decoration: none;
+}
+
+.bar a:hover {
+   color: var(--barhovr);
+}
+
+.bar a:active {
+   color: var(--linkactv);
+}
+
+.prev {
+   text-align: left;
+}
+
+.icon {
+   height: 1.4em;
+}
+
+a:hover .icon {
+   background-color: var(--barhovr);
+}
+
+a:active .icon {
+   background-color: var(--linkactv);
+}
+
+.chap {
+   text-align: center;
+}
+
+.indx {
+   text-align: right;
+}
+
+.next {
+   text-align: right;
+}
+
+/**********************************************************/
+/*        for main title and toc page                     */
+
+.titl {
+   text-align: center;
+   font-size: 1.5em;
+   font-weight: bold;
+   margin-top: 2.0em;
+}
+.subttl {
+   text-align: center;
+   font-size: 1.1em;
+   font-weight: bold;
+   margin-top: 0.1em;
+}
+.auth {
+   text-align: right;
+   font-size: 1.0em;
+   font-weight: normal;
+   margin-top: 0.1em;
+   margin-right: 1.5em;
+}
+
+.toc {
+   font-weight: bold;
+   margin-top: 1.0em;
+}
+.tocttl {
+   text-align: center;
+   font-size: 1.0em;
+   margin-top: 0.5em;
+   margin-bottom: 0.5em;
+}
+.tocitm {
+   margin-left: 11em;
+   text-align: left;
+   font-size: 0.9em;
+}
+
+/**********************************************************/
+/*        for group pages                                 */
+
+.top {
+   text-align: center;
+}
+
+.cells {
+   display: grid;
+   width: 100%;
+   grid-template-columns: auto auto auto auto auto auto auto auto auto auto
+                          auto auto auto auto auto auto auto auto auto auto;
+   grid-gap: 1px;
+   color: var(--paprwhit);
+}
+
+.ex {
+   background-color: var(--bararea);
+   width: 100%;
+   height: 1.0em;
+   line-height: 0.9em;
+   font-size: 2.0em;
+   text-align: center;
+}
+
+.ex a {
+   text-decoration: none;
+}
+
+.ex a:link {
+   color: var(--bararea);
+}
+
+.ex a:visited {
+   color: var(--starvstd);
+}
+
+.ex a:hover {
+   color: var(--barhovr);
+}
+
+.ex a:active {
+   color: var(--linkactv);
+}
+
+/**********************************************************/
+/*        for exercise index and name index pages               */
+
+.container {
+   box-sizing: border-box;
+   font-family: Helvetica, sans-serif;
+   font-size: 0.95em;
+   width: 90%;
+   margin-left: 10%;
+}
+
+.container a {
+   text-decoration: none;
+}
+
+.letters {
+   text-align: center;
+   color: var(--indxltrs);
+   margin-top: 2.0em;
+   font-size: 1.1em;
+}
+
+.igrp {
+   text-align: center;
+   height: 2.0em;
+   line-height: 2.0em;
+   font-size: 1.5em;
+}
+
+.iltrid {
+   height: 3.0em;  /* so jumped-to letter remains visible */
+}
+
+.iltr {
+   text-align: center;
+   height: 2.0em;
+   line-height: 1.0em;
+   font-size: 1.5em;
+}
+
+.ix {
+   display: grid;
+   grid-template-columns: 20% 80%
+}
+
+.id {
+   text-align: left;
+}
+
+.it {
+   text-align: left;
+}
+
+.id a:visited {
+   color: var(--linkvstd);
+}
+
+/**********************************************************/
+/*        for bibliography                                */
+
+.bib {
+   display: grid;
+   grid-template-columns: 62% auto auto;
+   font-size: 0.9em;
+   width: 100%;
+}
+.bttl {
+   text-align: left;
+}
+.bref {
+   text-align: left;
+}
+.blic {
+   text-align: right;
+}
+
+/*
+.bib {
+   display: grid;
+   grid-template-columns: 58% auto auto;
+   font-size: 1.6vw;
+   width: 100%;
+   overflow-x: hidden;
+}
+.bttl::before {
+   float: left;
+   height: 1em;
+   width: 0;
+   white-space: nowrap;
+   content:
+   ". . . . . . . . . . . . . . . . . . . . "
+   ". . . . . . . . . . . . . . . . . . . . "
+   ". . . . . . . . . . . . . . . . . . . . "
+   ". . . . . . . . . . . . . . . . . . . . "
+   ". . . . . . . . . . . . . . . . . . . . "
+   ". . . . . . . . . . . . . . . . . . . . "
+}
+.bttl {
+   text-align: left;
+   background: white;
+}
+.bref {
+   text-align: left;
+   background: white;
+}
+.blic {
+   text-align: right;
+   background: white;
+}
+*/
+
+/*
+.bib {
+   display: flex;
+   font-size: 1.6vw;
+   width: 100%;
+   overflow-x: hidden;
+}
+.bib::before {
+   float: left;
+   width: 0;
+   white-space: nowrap;
+   content:
+   ". . . . . . . . . . . . . . . . . . . . "
+   ". . . . . . . . . . . . . . . . . . . . "
+   ". . . . . . . . . . . . . . . . . . . . "
+   ". . . . . . . . . . . . . . . . . . . . "
+   ". . . . . . . . . . . . . . . . . . . . "
+   ". . . . . . . . . . . . . . . . . . . . "
+}
+.bttl {
+   flex: 0 0 58%;
+   text-align: left;
+}
+.bref {
+   text-align: left;
+   background: white;
+}
+.blic {
+   align-self: flex-end;
+   text-align: right;
+   background: white;
+}
+*/
+
+/**********************************************************/
+/*        for main copyright (first page of book)         */
+
+.copyr {
+   display: grid;
+   grid-template-columns: auto auto;
+   column-gap: 1.0em;
+   width: 85%;
+   margin: auto;
+   margin-top: 1.9em;
+   font-family: Helvetica, Arial, sans-serif;
+   font-weight: normal;
+   font-size: 0.7em;
+}
+
+.copyr-imslp {
+   margin-top: auto;
+   margin-bottom: auto;
+   text-align: right;
+   font-size: 1.3em;
+}
+
+/**********************************************************/
+/*        for identification footer (other pages)         */
+
+.foot {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   width: 100%;
+   margin-top: 3.0em;
+   font-family: Helvetica, Arial, sans-serif;
+   font-weight: normal;
+   font-size: 0.6em;
+}
+
+.footL {
+   text-align: left;
+}
+
+.footC {
+   text-align: center;
+}
+
+.footR {
+   text-align: right;
+}

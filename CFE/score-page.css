@@ -1,67 +1,118 @@
+/* ©2024 J. J. Olson, licensed as CC-BY */
 /**********************************************************/
 /*                     score-page.css                     */
 /*                                                        */
-/* Style settings for a score page in a subject thread,   */
-/* e.g. for an exercise page like ex/no123.html           */
+/* Style settings for a full-width exercise score page.   */
+/* Whole page magnifies as browser window is widened.     */
+/* instead of using browser's font size to magnify.       */
+/* Bar scrolls away to see more music on mobile devs.     */
+/* e.g. for a page like ex/no123.html                     */
 /*                                                        */
 /* Such pages consist of                                  */
-/*   o  "bar" a navigation bar containing                 */
-/*      "chap" a chapter/thread title and                 */
-/*      "prev" and "next" links to next thread elements.  */
-/*   o  "this" the title of the melody, visible on hover  */
-/*   o  an <img> link to the svg score                    */
+/*   "bar" a navigation bar containing                    */
+/*      "prev" linking to previous item in sequence       */
+/*      "icon" linking back to the main page              */
+/*      "chap" the chapter/thread title                   */
+/*      "indx" ABC... linking to the name index           */
+/*      "next" linking to next item in sequence           */
+/*   "this" the melody title visible only upon hover      */
+/*   "scor" an <img> link to the svg music score          */
 /*                                                        */
 /**********************************************************/
+
+
+/**********************************************************/
+/*        global color scheme                             */
 body {
-   background-color: #fffdf0;
-   font-family: Helvetica, sans-serif; /* for chap, next, prev */
-   font-size: 1.8vw;  /* so text scales according to window width */
+   --bararea: #448;   /* CFE dark blue bar */
+   --bartext: #fff;   /* CFE white bar text */
+   --barhovr: #6cf;   /* CFE lt blue bar hover */
+   --pagewhit: #fff;
+   --linkblck: #000;
+   --linkactv: #f00;
+   background-color: var(--pagewhit);
+   font-family: Helvetica, sans-serif;
+   font-size: 1.8vw;  /* so contents scale according to window width */
 }
+
+/**********************************************************/
+/*        for non-fixed (scroll-away) navigation bar      */
 
 .bar {
    display: grid;
-   grid-template-columns: auto auto auto;
-   background-color: #448;  /* dark blue for CFE book */
-   color: #fffdf0;
-   height: 3vw;  /* so bar scales according to window width */
-   line-height: 3vw;  /* to keep text centered vertically in bar */
+   grid-template-columns: auto auto auto auto auto;
+   background-color: var(--bararea);
+   color: var(--bartext);
+   height: 1.6em;
+   line-height: 1.6em;
+}
+
+.bar a {
+   color: var(--bartext);
+   text-decoration: none;
+}
+
+.bar a:hover {
+   color: var(--barhovr);
+}
+
+.bar a:active {
+   color: var(--linkactv);
 }
 
 .prev {
    text-align: left;
 }
 
+.icon {
+   height: 1.6em;
+}
+
+a:hover .icon {
+   background-color: var(--barhovr);
+}
+
+a:active .icon {
+   background-color: var(--linkactv);
+}
+
 .chap {
    text-align: center;
+}
+
+.indx {
+   text-align: right;
 }
 
 .next {
    text-align: right;
 }
 
+/**********************************************************/
+/*        for hidden identification of this melody        */
+
 .this {
    text-align: center;
    text-decoration: none;
-   color: transparent;
+   color: transparent;      /* normally invisible */
    position: relative;
-   top: 0.6em;          /* lower relative to bar */
-   font-size: 2.0vw;    /* enlarged slightly vs bar */
-}
-
-.bar a {
-   text-decoration: none;
-   color: #fffdf0;
-}
-
-.bar a:hover {
-   color: #6cf;
+   top: 0.85em;
+   font-size: 1.15em;
+   background-image: url("fg/title.png"); /* gray TITLE on clear bkgd */
+   background-position: center;
+   background-size: contain;
+   background-repeat: no-repeat;
 }
 
 .this a:hover {
-   color: #000;  /* show only on mouseover */
+   background-color: var(--pagewhit);  /* hide title.png */
+   color: var(--linkblck);  /* show only on mouseover */
    cursor: pointer;
 }
 
-img {
-   width: 100%;  /* so user can scale via window width */
+/**********************************************************/
+/*        for full width image of svg music score         */
+
+.scor {
+   width: 100%;
 }
