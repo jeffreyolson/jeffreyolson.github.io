@@ -1,0 +1,104 @@
+/* ©2024 J. J. Olson, licensed as CC-BY */
+/**********************************************************/
+/*                        index.css                       */
+/*                                                        */
+/**********************************************************/
+body {
+   --paprwhit: #fff;
+   --paprdesk: #eee;
+   --paprshdw: #ddd;
+   --indxltrs: #00f;
+   --linkblck: #000;
+   --linkhovr: #00e;
+   --linkblue: #06c;
+   --linkvstd: #808;
+   --linkactv: #f00;
+   background-color: var(--paprdesk);
+   /* font-family: Century SchoolBook, Times New Roman, Times, serif; */
+   font-family: Helvetica, sans-serif;
+   margin: 0.5em;
+}
+
+a {
+   text-decoration: none;
+   color: var(--linkblue);
+}
+
+a:visited {
+   color: var(--linkblue);
+}
+
+a:hover {
+   color: var(--linkhovr);
+}
+
+a:active {
+   color: var(--linkactv);
+}
+
+h1 {
+   text-align: center;
+   font-size: 1.6em;
+   font-weight: bold;
+}
+
+h2 {
+   text-align: left;
+   font-size: 1.1em;
+   font-weight: bold;
+}
+
+p.norm {
+   text-indent: 3ch;
+}
+
+.ftbd {
+   width: 100%;
+}
+
+.papr {
+   background-color: #fff;
+   max-width: 700px;
+   font-size: calc(min(1em, 1.95vw));
+   margin: auto;
+   padding: 0em 3em 2em;
+   border-width: 0.2em 0.3em 0.4em;
+   border-style: solid;
+   border-color: #ddd;
+}
+
+.proj {
+   margin-top: 2em;
+   margin-bottom: 2em;
+   display: grid;
+   grid-template-columns: 40% 60%;
+   column-gap: 5%;
+}
+
+.pimg {
+   margin-top: 2.5em;
+   width: 100%;
+}
+
+
+.copyr {
+   display: grid;
+   grid-template-columns: auto auto;
+   column-gap: 1.5em;
+   width: 80%;
+   margin: auto;
+   margin-top: 0.9em;
+   margin-bottom: 2.0em;
+   font-family: Helvetica, Arial, sans-serif;
+   font-weight: normal;
+   font-size: calc(min(0.8em, 1.56vw));
+}
+.copyr-img {
+   display: block;
+   margin-top: auto;
+   margin-bottom: auto;
+   margin-left: auto;
+   margin-right: 5%;
+   height: 2.5em;
+}
+
