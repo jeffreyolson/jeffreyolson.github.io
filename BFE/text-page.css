@@ -28,7 +28,7 @@
 /**********************************************************/
 /*        global color scheme                             */
 body {
-   --bararea: #448;   /* CFE dark blue bar */
+   --bararea: #363;   /* BFE dark green bar */
    --bartext: #fff;   /* CFE white bar text */
    --barhovr: #6cf;   /* CFE lt blue bar hover */
    --starvstd: #fe4;  /* CFE gold star */
@@ -88,6 +88,11 @@ p.norm {
 
 .png, .svg {
    width: 100%;
+}
+
+.inpng, .insvg {
+   position: relative;
+   bottom: 0px;
 }
 
 /**********************************************************/
@@ -225,8 +230,7 @@ a:active .icon {
 .cells {
    display: grid;
    width: 100%;
-   grid-template-columns: auto auto auto auto auto auto auto auto auto auto
-                          auto auto auto auto auto auto auto auto auto auto;
+   grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
    grid-gap: 1px;
    color: var(--paprwhit);
 }

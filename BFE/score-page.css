@@ -1,0 +1,205 @@
+/* ©2024 J. J. Olson, licensed as CC-BY */
+/**********************************************************/
+/*                     score-page.css                     */
+/*                                                        */
+/* Style settings for a full-width exercise score page.   */
+/* Whole page magnifies as browser window is widened.     */
+/* instead of using browser's font size to magnify.       */
+/* Bar scrolls away to see more music on mobile devs.     */
+/* e.g. for a page like ex/no123.html                     */
+/*                                                        */
+/* Such pages consist of                                  */
+/*   "bar" a navigation bar containing                    */
+/*      "prev" linking to previous item in sequence       */
+/*      "icon" linking back to the main page              */
+/*      "chap" the chapter/thread title                   */
+/*      "indx" ABC... linking to the name index           */
+/*      "next" linking to next item in sequence           */
+/*   "this" the melody title visible only upon hover      */
+/*   "scor" an <img> link to the svg music score          */
+/*   "answer" initially hidden opt'l div with the answer  */
+/*                                                        */
+/**********************************************************/
+
+
+/**********************************************************/
+/*        global color scheme                             */
+body {
+   --bararea: #363;   /* BFE dark green bar */
+   --bartext: #fff;   /* CFE white bar text */
+   --barhovr: #6cf;   /* CFE lt blue bar hover */
+   --pagewhit: #fff;
+   --paprwhit: #fff;
+   --paprdesk: #eee;
+   --paprshdw: #ddd;
+   --linkblck: #000;
+   --linkhovr: #00e;
+   --linkblue: #06c;
+   --linkvstd: #808;
+   --linkactv: #f00;
+   background-color: var(--pagewhit);
+   font-family: Helvetica, sans-serif;
+   font-size: 1.8vw;  /* so contents scale according to window width */
+}
+
+/**********************************************************/
+/*        for non-fixed (scroll-away) navigation bar      */
+
+.bar {
+   display: grid;
+   grid-template-columns: auto auto auto auto auto;
+   background-color: var(--bararea);
+   color: var(--bartext);
+   height: 1.6em;
+   line-height: 1.6em;
+}
+
+.bar a {
+   color: var(--bartext);
+   text-decoration: none;
+}
+
+.bar a:hover {
+   color: var(--barhovr);
+}
+
+.bar a:active {
+   color: var(--linkactv);
+}
+
+.prev {
+   text-align: left;
+}
+
+.icon {
+   height: 1.6em;
+}
+
+a:hover .icon {
+   background-color: var(--barhovr);
+}
+
+a:active .icon {
+   background-color: var(--linkactv);
+}
+
+.chap {
+   text-align: center;
+}
+
+.indx {
+   text-align: right;
+}
+
+.next {
+   text-align: right;
+}
+
+/**********************************************************/
+/*        for hidden identification of this melody        */
+
+.this {
+   text-align: center;
+   text-decoration: none;
+   color: transparent;      /* normally invisible */
+   position: relative;
+   top: 0.85em;
+   font-size: 1.15em;
+   background-image: url("fg/title.png"); /* gray TITLE on clear bkgd */
+   background-position: center;
+   background-size: contain;
+   background-repeat: no-repeat;
+}
+
+.this a:hover {
+   background-color: var(--pagewhit);  /* hide title.png */
+   color: var(--linkblck);  /* show only on mouseover */
+   cursor: pointer;
+}
+
+.thisansw {
+   text-align: center;
+   text-decoration: none;
+   color: transparent;      /* normally invisible */
+   position: relative;
+   top: 0.85em;
+   font-size: 1.15em;
+   background-image: url("fg/answer.png"); /* gray ANSWER on clear bkgd */
+   background-position: center;
+   background-size: contain;
+   background-repeat: no-repeat;
+}
+
+.thisansw a:hover {
+   background-color: var(--pagewhit);  /* hide title.png */
+   color: var(--linkblue);  /* show only on mouseover */
+   cursor: pointer;
+}
+
+/**********************************************************/
+/*        for full width image of svg music score         */
+
+.scor {
+   width: 100%;
+}
+
+/**********************************************************/
+/*        for limited width paper                         */
+
+#answer {
+   visibility: hidden;
+}
+
+.papr {
+   box-sizing: border-box;
+   background-color: var(--paprwhit);
+   max-width: 50em;
+   font-size: calc(min(18px, 1.8vw)); /* won't get bigger than 16px */
+   margin: auto;
+   margin-top: 2em;
+   padding: 0em 3em 2em;
+   border-width: 0.2em 0.3em 0.4em;
+   border-style: solid;
+   border-color: var(--paprshdw);
+}
+
+/**********************************************************/
+/*        for general tags in papr div                    */
+
+.papr a {
+   text-decoration: none;
+   color: var(--linkblue);
+}
+
+.papr a:visited {
+   color: var(--linkblue);
+}
+
+.papr a:hover {
+   color: var(--linkhovr);
+}
+
+.papr a:active {
+   color: var(--linkactv);
+}
+
+.papr h1 {
+   text-align: center;
+   font-size: 1.6em;
+   font-weight: bold;
+}
+
+.papr h2 {
+   text-align: left;
+   font-size: 1.1em;
+   font-weight: bold;
+}
+
+.papr p.norm {
+   text-indent: 3ch;
+}
+
+.papr p.lyrics {
+   font-style: italic;
+   margin-left: 3em;
+}
