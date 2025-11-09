@@ -31,6 +31,8 @@ body {
    --bararea: #363;   /* BFE dark green bar */
    --bartext: #fff;   /* CFE white bar text */
    --barhovr: #6cf;   /* CFE lt blue bar hover */
+   --barttip: #fff;
+   --barttxt: #000;
    --starvstd: #fe4;  /* CFE gold star */
    --paprwhit: #fff;
    --paprdesk: #eee;
@@ -155,6 +157,11 @@ p.norm {
 
 .prev {
    text-align: left;
+   --ttipat: 1.4em;
+}
+
+.home {
+   --ttipat: 2.5em;
 }
 
 .icon {
@@ -171,14 +178,93 @@ a:active .icon {
 
 .chap {
    text-align: center;
+   --ttipat: 3em;
 }
 
 .indx {
    text-align: right;
+   --ttipat: 1.4em;
 }
 
 .next {
    text-align: right;
+   --ttipat: 1.4em;
+}
+
+/**********************************************************/
+/*        for tooltips in the navigation bar              */
+/*        (tooltipr is the right-justified version)       */
+.tooltip,
+.tooltipr {
+   position: relative;
+   display: inline-block;
+   height: 1.4em;
+   --arrowsize: 1.0em;
+}
+
+.tooltip .tooltiptext,
+.tooltipr .tooltiptext {
+   visibility: hidden;
+   position: absolute;
+   z-index: 1;
+   top: 170%;
+   background-color: var(--barttip);
+   color: var(--barttxt);
+   font-size: 0.7em;
+   text-align: center;
+   width: max-content;
+   padding: 0em 1em;
+   border-radius: 0.6em;
+   border-width: 0.2em;
+   border-style: solid;
+   opacity: 0;
+   transition: opacity 1s;
+}
+
+.tooltip .tooltiptext {
+   left: 0%;
+}
+
+.tooltipr .tooltiptext {
+   right: 0%;
+}
+
+.tooltip .tooltiptext::before,
+.tooltipr .tooltiptext::before {
+   content: " ";
+   position: absolute;
+   bottom: 100%;  /* At the top of the tooltip */
+   margin-left: calc(var(--arrowsize) * -1)-7px;
+   border-width: var(--arrowsize);
+   border-style: solid;
+   border-color: transparent transparent var(--barttxt) transparent;
+}
+
+.tooltip .tooltiptext::after,
+.tooltipr .tooltiptext::after {
+   content: " ";
+   position: absolute;
+   bottom: 91%;  /* At the top of the tooltip */
+   margin-left: calc(var(--arrowsize) * -1)-7px;
+   border-width: var(--arrowsize);
+   border-style: solid;
+   border-color: transparent transparent var(--barttip) transparent;
+}
+
+.tooltip .tooltiptext::before,
+.tooltip .tooltiptext::after {
+   left: var(--ttipat);
+}
+
+.tooltipr .tooltiptext::before,
+.tooltipr .tooltiptext::after {
+   right: var(--ttipat);
+}
+
+.tooltip:hover .tooltiptext,
+.tooltipr:hover .tooltiptext {
+   visibility: visible;
+   opacity: 1;
 }
 
 /**********************************************************/
