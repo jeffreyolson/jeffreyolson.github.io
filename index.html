@@ -1,13 +1,14 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html lang="en">
-<!-- Copyright © 2024 by J. J. Olson.  Licensed under terms of the
+<!-- Copyright © 2026 by J. J. Olson.  Licensed under terms of the
      Creative Commons Attribution 4.0 International License.  -->
 <head>
   <meta charset="utf-8"/>
   <title>jjolson.net</title>
   <link rel="stylesheet" type="text/css" title="" href="index.css">
+  <script src="sample.js"></script>
 </head>
-<body>
+<body onload="initSamples()">
 <div class="papr">
    <h1><img class="icon" src="favicon.png">J.J.'s Sightreading Projects</h1>
    <h2 style="text-align: center;">Learn to Sightread Anywhere on the Guitar Fretboard</h2>
@@ -25,7 +26,8 @@
             that you solve mainly by playing the music.
          </p>
          <p>
-            <i>(DRAFT FOR REVIEW)</i>
+            <button id="bfe"><i><span id="bfeph">See a random</span> <b>Beginning</b> exercise</i></button>
+            <div id="bfetst"></div>
          </p>
       </div>
    </div>
@@ -43,7 +45,8 @@
             A method with lots of music plus some humor (see "Playing With Your Nose").
          </p>
          <p>
-            <i>(DRAFT FOR REVIEW)</i>
+            <button id="dfe"><i><span id="dfeph">See a random</span> <b>Diatonic</b> exercise</i></button>
+            <div id="dfetst"></div>
          </p>
       </div>
    </div>
@@ -62,7 +65,8 @@
             melodies to broaden your perspective and keep your sightreading sharp!
          </p>
          <p>
-            <i>(DRAFT FOR REVIEW)</i>
+            <button id="cfe"><i><span id="cfeph">See a random</span> <b>Chromatic</b> exercise</i></button>
+            <div id="cfetst"></div>
          </p>
       </div>
    </div>

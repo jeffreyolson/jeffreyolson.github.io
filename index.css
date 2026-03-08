@@ -1,4 +1,4 @@
-/* ©2024 J. J. Olson, licensed as CC-BY */
+/* ©2026 J. J. Olson, licensed as CC-BY */
 /**********************************************************/
 /*                        index.css                       */
 /*                                                        */
@@ -85,6 +85,22 @@ p.norm {
 .pimg {
    margin-top: 2.5em;
    width: 100%;
+}
+
+#bfe, #dfe, #cfe {
+   background-color: white;
+   color: var(--linkblue);
+   border-color: var(--linkblue);
+   border-radius: 0.4em;
+   border-width: 0.1em;
+   font-size: 0.9em;
+   padding: 0.2em 0.9em;
+}
+
+#bfe:hover, #dfe:hover, #cfe:hover {
+   background-color: var(--butnnorm);
+   color: var(--linkhovr);
+   border-color: var(--linkhovr);
 }
 
 
