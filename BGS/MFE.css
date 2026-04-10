@@ -37,15 +37,18 @@ body {
 
 .prev {
    text-align: left;
+   font-size: 1.3em;
 }
 
 .mnth {
    text-align: center;
    font-weight: bold;
+   margin-top: 0.25em;
 }
 
 .next {
    text-align: right;
+   font-size: 1.3em;
 }
 
 .nav a {
@@ -53,11 +56,11 @@ body {
 }
 
 .nav a:link {
-   color: #eee;  
+   color: #ccc;  
 }
 
 .nav a:visited {
-   color: #eee;  
+   color: #ccc;  
 }
 
 .nav a:hover {
