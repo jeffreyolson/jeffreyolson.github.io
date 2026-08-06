@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<!-- Copyright © 2025 by J. J. Olson.  Licensed under terms of the
+     Creative Commons Attribution 4.0 International License.  -->
+<head>
+<title>GFA26 Complexity Metrics</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" title="" href="text-page.css">
+</head>
+<body>
+<div class="barfixer">
+   <div class="bar">
+      <div class="prev">
+         <div class="tooltip">
+            <a href="real-melodies.html">&nbsp; &#9668; Prev</a>
+            <span class="tooltiptext">3. Use Real Melodies that Match the Lesson</span>
+         </div>
+      </div>
+      <div class="home">
+         <div class="tooltip">
+            <a href="poster2026.html#contents"><img class="icon" src= "fg/fem-icon.png"></a>
+            <span class="tooltiptext">Table of Contents</span>
+         </div>
+      </div>
+      <div class="chap">LilyPond and Fingering Complexity Metrics</div>
+      <div class="indx">&nbsp;</div>
+      <div class="next">
+         <div class="tooltipr">
+            <a href="i-space-proprioception.html">Next &#9658; &nbsp</a>
+            <span class="tooltiptext">I-Space and Proprioception While Sightreading</span>
+         </div>
+      </div>
+   </div> <!-- end bar -->
+</div> <!-- end barfixer -->
+<div class="papr">
+<br>
+
+<p class="jj">
+Typesetting all these exercises in LilyPond allowed them to be automatically graded by computer,
+so that beginning students would get pieces that matched the range of notes they were learning
+while more advanced students could gauge the difficulty of playing them in different positions.
+</p>
+<img class="png" src="fg/point4-fingering-complexity-metrics.png" style="width: 100%; margin-left: 0%; margin-top: 0%">
+<img class="png" src="fg/text4a-lilypond.png" style="width: 100%; margin-left: 0%; margin-top: 4%">
+<img class="png" src="fg/text4b-perl-script.png" style="width: 100%; margin-left: 0%; margin-top: 4%">
+<p class="jj">
+Even simple melodies can be much harder to play in some positions,
+due to the three cases of left-hand fingering complexity shown below.
+A custom Perl script figures out which positions fit the range of a piece,
+and then, for each such position, steps through the piece note-by-note
+looking for these cases of complexity:
+</p>
+<img class="png" src="fg/text4c-complexity-cases.png" style="width: 100%; margin-left: 0%; margin-top: 0%">
+<img class="png" src="fg/complexity-cases-abc.png" style="width: 90%; margin-left: 8%; margin-top: 3%">
+<p class="jj">
+Counting those cases for each position measures which positions are harder:
+</p>
+<img class="png" src="fg/text4d-computation.png" style="width: 100%; margin-left: 0%; margin-top: 0%">
+<p class="jj">
+That's how we get the metrics by position introduced in the Diatonic book.
+</p>
+<img class="png" src="fg/text4e-example.png" style="width: 100%; margin-left: 0%; margin-top: 0%">
+<img class="png" src="fg/metrics-for-happy-birthday.png" style="width: 90%; margin-left: 10%; margin-top: 2%; margin-bottom: 0%">
+<p class="jj">
+The above note-by-note breakdown for Happy Birthday shows how these cases arise.
+There are no A's for positions I, VII and IX, meaning no out-of-position stretches for this piece.
+Columns of B's tends to happen when two neighboring notes are a fourth apart,
+which tends to put them on the same fret (and finger) on neighboring strings.
+The column of C's happens on the octave skip up to the high G in the third phrase.
+But none of these effects register in first position so it scores a perfect 0.
+Positions vary!
+</p>
+<br>
+<p class="ref">
+[3] Han-Wen Nienhuys and Jan Nieuwenhuizen, "LilyPond, a system for automated music engraving," in Proceedings of the XIV Colloquium on Musical Informatics (Firenze, Italy, 2003), 167-172<br>
+<a href="https://lilypond.org/">https://lilypond.org/</a>
+</p>
+<p class="ref">
+[4] Iznaola, Ricardo. “Left-Hand Technique and the Limits of the Possible.” Guitar Forum 1 (2001): 1–44.      Reprinted in Soundboard Scholar 11 (2026).<br>
+<a href="https://digitalcommons.du.edu/sbs/vol11/iss1/1/">https://digitalcommons.du.edu/sbs/vol11/iss1/1/</a>
+</p>
+
+
+<!------------------------------------------------------------------>
+<div class="copyr">
+   <div class="left"><img class="copyr-img" src="fg/jjcanoe.png"></div>
+   <div class="right">
+      <div class="copyr-jjo">Copyright &copy; 2026 by J. J. Olson -- free to use with attribution under</div>
+      <div class="copyr-cca"><a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a></div>
+   </div>
+</div>
+</div> <!-- end papr -->
+</body>
+</html>

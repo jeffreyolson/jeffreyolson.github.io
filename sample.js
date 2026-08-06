@@ -7,6 +7,8 @@
 /***********************************************************/
 
    // global data
+   // absolute home page ref
+   let JJO = "https://jjolson.net/"
    // a variety of phrases for part of the button text
    let phrases = [ "See another", "And another", "Yet another", "See a new",
        "Get one more", "Wow, here's another", "You'll like this", "Sightread this" ]
@@ -115,7 +117,7 @@
          console.log("auto shuffleBFE()\n");
       }
       let exBFE = getBFE();
-      window.location.href = "BFE/ex/no" + exBFE + ".html";
+      window.location.href = JJO + "BFE/ex/no" + exBFE + ".html";
       // window.open("BFE/ex/no" + exBFE + ".html", "_blank");
       document.getElementById("bfeph").innerHTML = phBFE();
    }
@@ -126,7 +128,7 @@
          console.log("auto shuffleDFE()\n");
       }
       let exDFE = getDFE();
-      window.location.href = "DFE/ex/no" + exDFE + ".html";
+      window.location.href = JJO + "DFE/ex/no" + exDFE + ".html";
       // window.open("DFE/ex/no" + exDFE + ".html", "_blank");
       document.getElementById("dfeph").innerHTML = phDFE();
    }
@@ -137,7 +139,7 @@
          console.log("auto shuffleCFE()\n");
       }
       let exCFE = getCFE();
-      window.location.href = "CFE/ex/no" + exCFE + ".html";
+      window.location.href = JJO + "CFE/ex/no" + exCFE + ".html";
       // window.open("CFE/ex/no" + exCFE + ".html", "_blank");
       document.getElementById("cfeph").innerHTML = phCFE();
    }
